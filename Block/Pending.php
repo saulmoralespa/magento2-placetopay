@@ -8,13 +8,11 @@
 
 namespace Saulmoralespa\PlaceToPay\Block;
 
-use \Magento\Framework\View\Element\Template;
-
-class Pending extends Template
+class Pending extends \Magento\Framework\View\Element\Template
 {
     public function getMessage()
     {
-        return __('The status of the order is pending, waiting to process the payment by  placetoPay');
+        return __('The status of the order is pending, waiting to process the payment by placetoPay');
     }
 
     public function getUrlHome()

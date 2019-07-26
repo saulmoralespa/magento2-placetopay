@@ -12,5 +12,4 @@ class PlaceToPay extends AbstractMethod
 
     protected $_code = self::CODE;
 
-
 }

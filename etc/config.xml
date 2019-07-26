@@ -10,9 +10,9 @@
             <placetopay>
                 <active>0</active>
                 <title>placetoPay</title>
-                <environment>0</environment>
+                <environment>1</environment>
                 <order_status>pending_payment</order_status>
-                <model>Saulmoralespa\PlaceToPay\Model\PlaceToPay</model>
+                <model>Saulmoralespa\PlaceTopay\Model\PlaceToPay</model>
                 <payment_action>true</payment_action>
                 <allowspecific>0</allowspecific>
                 <group>offline</group>
