@@ -19,5 +19,5 @@ class System extends \Magento\Framework\Logger\Handler\Base
      *
      * @var string
      */
-    protected $fileName = '/var/log/payulatam.log' ;
+    protected $fileName = '/var/log/placetopay.log' ;
 }

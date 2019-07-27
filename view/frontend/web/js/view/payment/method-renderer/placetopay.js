@@ -9,7 +9,6 @@ define(
         'Magento_Checkout/js/model/payment/additional-validators',
         'Magento_Checkout/js/model/error-processor',
         'Magento_Checkout/js/model/full-screen-loader',
-        'Saulmoralespa_PlaceToPay/js/view/payment/form-builder',
         'mage/url'
     ],
     function (
@@ -22,7 +21,6 @@ define(
         additionalValidators,
         errorProcessor,
         fullScreenLoader,
-        formBuilder,
         url
     ) {
         'use strict';
@@ -34,9 +32,8 @@ define(
             },
 
             placeOrder: function (data, event) {
-                if (event) {
+                if (event)
                     event.preventDefault();
-                }
                 var self = this,
                     placeOrder,
                     emailValidationResult = customer.isLoggedIn(),
@@ -65,11 +62,11 @@ define(
 
             afterPlaceOrder: function() {
                 $.post(url.build('placetopay/payment/data'), 'json')
-                    .done( function (response) {
-                        formBuilder(response.data).submit();
-                    }).fail( function (response) {
+                    .done( data => {
+                        window.location = data.url;
+                    }).fail( response => {
                     errorProcessor.process(response, this.messageContainer);
-                }).always( function ()  {
+                }).always( () => {
                     fullScreenLoader.stopLoader();
                 });
             },
