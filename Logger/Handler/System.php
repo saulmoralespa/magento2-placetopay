@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Saulmoralespa\PlaceTopay\Logger\Handler;
+namespace Saulmoralespa\PlaceToPay\Logger\Handler;
 
 use Monolog\Logger;
 

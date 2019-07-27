@@ -14,7 +14,7 @@
         <arguments>
             <argument name="name" xsi:type="string">placetopay</argument>
             <argument name="handlers"  xsi:type="array">
-                <item name="system" xsi:type="object">Saulmoralespa\PlaceTopay\Logger\Handler\System</item>
+                <item name="system" xsi:type="object">Saulmoralespa\PlaceToPay\Logger\Handler\System</item>
             </argument>
         </arguments>
     </type>

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Saulmoralespa\PlaceTopay\Logger;
+namespace Saulmoralespa\PlaceToPay\Logger;
 
 
 class Logger extends \Monolog\Logger

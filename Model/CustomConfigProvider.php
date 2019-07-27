@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Saulmoralespa\PlaceTopay\Model;
+namespace Saulmoralespa\PlaceToPay\Model;
 
 
 class CustomConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
@@ -14,7 +14,7 @@ class CustomConfigProvider implements \Magento\Checkout\Model\ConfigProviderInte
     /**
      * @var string
      */
-    protected $methodCode = \Saulmoralespa\PlaceTopay\Model\PlaceToPay::CODE;
+    protected $methodCode = \Saulmoralespa\PlaceToPay\Model\PlaceToPay::CODE;
 
     public function __construct(
         \Magento\Framework\View\Asset\Repository $assetRepo

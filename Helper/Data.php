@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Saulmoralespa\PlaceTopay\Helper;
+namespace Saulmoralespa\PlaceToPay\Helper;
 
 use Magento\Framework\View\LayoutFactory;
 

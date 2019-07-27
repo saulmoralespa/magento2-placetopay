@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Saulmoralespa\PlaceTopay\Controller\Payment;
+namespace Saulmoralespa\PlaceToPay\Controller\Payment;
 
 
 use Magento\Framework\App\ResponseInterface;

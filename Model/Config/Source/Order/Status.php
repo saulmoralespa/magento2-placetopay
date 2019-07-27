@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Saulmoralespa\PlaceTopay\Model\Config\Source\Order;
+namespace Saulmoralespa\PlaceToPay\Model\Config\Source\Order;
 
 
 class Status extends \Magento\Sales\Model\Config\Source\Order\Status

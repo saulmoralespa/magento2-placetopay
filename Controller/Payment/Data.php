@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Saulmoralespa\PlaceTopay\Controller\Payment;
+namespace Saulmoralespa\PlaceToPay\Controller\Payment;
 
 
 use Dnetix\Redirection\PlacetoPay;
@@ -31,8 +31,8 @@ class Data extends \Magento\Framework\App\Action\Action
         \Magento\Framework\App\Action\Context $context,
         \Magento\Checkout\Model\Session $checkoutSession,
         \Magento\Sales\Model\OrderFactory $orderFactory,
-        \Saulmoralespa\PlaceTopay\Helper\Data $helperData,
-        \Saulmoralespa\PlaceTopay\Logger\Logger $placeToPayLogger,
+        \Saulmoralespa\PlaceToPay\Helper\Data $helperData,
+        \Saulmoralespa\PlaceToPay\Logger\Logger $placeToPayLogger,
         \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
         \Magento\Sales\Model\Order\Payment\Transaction\BuilderInterface $transactionBuilder,
         PaymentHelper $paymentHelper
@@ -82,7 +82,7 @@ class Data extends \Magento\Framework\App\Action\Action
                     'description' => 'Testing payment',
                     'amount' => [
                         'currency' => 'COP',
-                        'total' => $cart->totalPrice,
+                        'total' => 90000,
                     ],
                     'shipping' => [
                         'name' => '',

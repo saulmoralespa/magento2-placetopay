@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Saulmoralespa\PlaceTopay\Model;
+namespace Saulmoralespa\PlaceToPay\Model;
 
 use \Magento\Payment\Model\Method\AbstractMethod;
 use Exception;

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Saulmoralespa\PlaceTopay\Logger;
+namespace Saulmoralespa\PlaceToPay\Logger;
 
 
 class Handler extends  \Magento\Framework\Logger\Handler\Base

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Saulmoralespa\PlaceTopay\Model\Config\Source;
+namespace Saulmoralespa\PlaceToPay\Model\Config\Source;
 
 
 class Environment
