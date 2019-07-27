@@ -109,4 +109,11 @@ class PlaceToPay extends AbstractMethod
         return true;
     }
 
+    public function getAmount($order)
+    {
+
+        $amount = $order->getGrandTotal();
+        return $amount;
+    }
+
 }

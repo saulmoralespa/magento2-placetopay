@@ -64,43 +64,14 @@ class Data extends \Magento\Framework\App\Action\Action
         try{
             $order = $this->_getCheckoutSession()->getLastRealOrder();
             $method = $order->getPayment()->getMethod();
-            $methodInstance = $this->_paymentHelper->getMethodInstance($method);
+            //$methodInstance = $this->_paymentHelper->getMethodInstance($method);
 
             $placetopay = $this->placeToPay();
 
             $orderId = $order->getId();
             $reference = $orderId . "_" . time();
 
-            $request = [
-                'buyer' => [
-                    'name' => '',
-                    'surname' => '',
-                    'email' => ''
-                ],
-                'payment' => [
-                    'reference' => $reference,
-                    'description' => 'Testing payment',
-                    'amount' => [
-                        'currency' => 'COP',
-                        'total' => 90000,
-                    ],
-                    'shipping' => [
-                        'name' => '',
-                        'surname' => '',
-                        'address' => [
-                            'street' => '',
-                            'city' => '',
-                            'phone' => '',
-                            'country' => ''
-                        ]
-                    ]
-                ],
-                'expiration' => date('c', strtotime('+2 days')),
-                'returnUrl' => $this->_url->getUrl('placetopay/payment/response', ['reference' => $reference]),
-                "cancelUrl" => $this->_url->getUrl('placetopay/payment/cancel'),
-                'ipAddress' => $this->getIP(),
-                'userAgent' => $_SERVER['HTTP_USER_AGENT'],
-            ];
+            $request = $this->getDataParamsPayment($order, $reference);
 
             $response = $placetopay->request($request);
             if ($response->isSuccessful()) {
@@ -143,5 +114,71 @@ class Data extends \Magento\Framework\App\Action\Action
         return ($_SERVER['REMOTE_ADDR'] == '::1' || $_SERVER['REMOTE_ADDR'] == '::' ||
             !preg_match('/^((?:25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9]).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])$/m',
                 $_SERVER['REMOTE_ADDR'])) ? '127.0.0.1' : $_SERVER['REMOTE_ADDR'];
+    }
+
+    public function getDataParamsPayment($order, $reference)
+    {
+        $address = $this->getAddress($order);
+
+        $request = [
+            'buyer' => [
+                'name' => $address->getFirstname(),
+                'surname' => $address->getLastname(),
+                'email' => $order->getCustomerEmail()
+            ],
+            'payment' => [
+                'reference' => $reference,
+                'description' => __('Order # %1', $order->getId()),
+                'amount' => [
+                    'currency' => $order->getOrderCurrencyCode(),
+                    'total' => $order->getGrandTotal(),
+                ],
+                'shipping' => [
+                    'name' => $address->getFirstname(),
+                    'surname' => $address->getLastname(),
+                    'address' => [
+                        'street' => $address->getData("street"),
+                        'city' => $address->getCity(),
+                        'phone' => $address->getTelephone(),
+                        'country' => $order->getOrderCurrencyCode()
+                    ]
+                ]
+            ],
+            'expiration' => date('c', strtotime($this->getDays())),
+            'returnUrl' => $this->_url->getUrl('placetopay/payment/response', ['reference' => $reference]),
+            "cancelUrl" => $this->_url->getUrl('placetopay/payment/cancel'),
+            'ipAddress' => $this->getIP(),
+            'userAgent' => $_SERVER['HTTP_USER_AGENT'],
+        ];
+
+        return $request;
+    }
+
+    public function getAddress($order)
+    {
+        $billingAddress = $order->getBillingAddress();
+        $shippingAddress = $order->getShippingAddress();
+
+        if ($billingAddress)
+            return $billingAddress;
+
+        return $shippingAddress;
+
+    }
+
+    public function getDays()
+    {
+        $today = date('Y-m-d');
+        $weekDay = date('w', strtotime($today));
+
+        $days = 0;
+        if ($weekDay == 0)
+            $days += 1;
+        if ($weekDay == 5)
+            $days += 3;
+        if ($weekDay == 6)
+            $days += 2;
+
+        return "+$days days";
     }
 }
