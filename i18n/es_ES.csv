@@ -1,6 +1,8 @@
 "Transactional key","Llave transaccional",
 "Site Identifier","Identificador del sitio",
 "URL refers to the endpoint to use","URL hace referencia al endpoint a usar",
+"Enviroments","Entornos",
+"Environment","Entorno",
 "Development","Desarrollo",
 "Production","Producción",
 "URL for payment notifications: %1","URL para notificaciones de pagos %1",
@@ -11,4 +13,7 @@
 "Payment approved","Pago aprobado",
 "Payment declined","Pago rechazado",
 "Invoice created","Factura creada",
-"Invoice #%1","Factura #%1"
+"Invoice #%1","Factura #%1",
+"State of the Order","Estado de la Orden",
+"Order status when the payment is approved","Estado del pedido cuando el pago es aprobado",
+"Order status when the payment is rejected","Estado del pedido cuando el pago es rechazado"
