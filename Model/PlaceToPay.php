@@ -4,7 +4,7 @@
 namespace Saulmoralespa\PlaceToPay\Model;
 
 use Dnetix\Redirection\PlacetoPay as PlacetoPayRedirect;
-use \Magento\Payment\Model\Method\AbstractMethod;
+use Magento\Payment\Model\Method\AbstractMethod;
 use Exception;
 
 class PlaceToPay extends AbstractMethod

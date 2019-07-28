@@ -82,6 +82,9 @@ class Notify extends \Magento\Framework\App\Action\Action
             exit;
 
         $status =  $request->getParam('status');
+
+        $this->_helperData->log($status);
+
         if ($status['status'] === 'PENDING')
             exit;
 
