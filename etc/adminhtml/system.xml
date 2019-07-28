@@ -31,6 +31,11 @@
                     </depends>
                 </field>
 
+                <field id="notify_url" translate="label" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notify URL</label>
+                    <frontend_model>Saulmoralespa\PlaceToPay\Block\Adminhtml\Form\Field\NotifyUrl</frontend_model>
+                </field>
+
                 <include path="Saulmoralespa_PlaceToPay::system/enviroment.xml"/>
                 <include path="Saulmoralespa_PlaceToPay::system/states.xml"/>
 

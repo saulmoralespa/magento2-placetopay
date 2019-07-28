@@ -2,4 +2,6 @@
 "Site Identifier","Site Identifier",
 "URL refers to the endpoint to use","URL refers to the endpoint to use",
 "Development","Development",
-"Production","Production"
+"Production","Production",
+"URL for payment notifications: %1","URL for payment notifications: %1",
+"Notify URL","Notify URL"
