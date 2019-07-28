@@ -28,3 +28,4 @@ php bin/magento setup:static-content:deploy es_CO #on i18n
 ## Configuration ##
 
 ### 1. Enter the configuration menu of the payment method ###
+![Enter the configuration menu of the payment method](https://4.bp.blogspot.com/-9OczydqYwUQ/XT32hzPJslI/AAAAAAAACws/3phTvB6A5_QFPa7OPyywUUZfp-LhxNikwCLcBGAs/s1600/screenshot.png)

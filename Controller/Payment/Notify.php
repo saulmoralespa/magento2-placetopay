@@ -77,15 +77,7 @@ class Notify extends \Magento\Framework\App\Action\Action
 
         if (!$request->getParam('reference') ||
             !$request->getParam('requestId') ||
-            !$request->getParam('signature') ||
-            !$request->getParam('status'))
-            exit;
-
-        $status =  $request->getParam('status');
-
-        $this->_helperData->log($status);
-
-        if ($status['status'] === 'PENDING')
+            !$request->getParam('signature'))
             exit;
 
         $reference = $request->getParam('reference');
