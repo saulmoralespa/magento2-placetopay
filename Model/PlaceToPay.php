@@ -3,6 +3,7 @@
 
 namespace Saulmoralespa\PlaceToPay\Model;
 
+use Dnetix\Redirection\PlacetoPay as PlacetoPayRedirect;
 use \Magento\Payment\Model\Method\AbstractMethod;
 use Exception;
 
@@ -107,6 +108,24 @@ class PlaceToPay extends AbstractMethod
         if (!in_array($currencyCode, $this->_supportedCurrencyCodes))
             return false;
         return true;
+    }
+
+    /**
+     * @return PlacetoPayRedirect
+     * @throws Exception
+     */
+    public function placeToPay()
+    {
+        try{
+            $placeToPay = new PlacetoPayRedirect([
+                'login' => $this->_helperData->getLogin(),
+                'tranKey' => $this->_helperData->getTrankey(),
+                'url' => $this->_helperData->getUrlEndPoint()
+            ]);
+            return $placeToPay;
+        }catch (Exception $exception){
+            throw new Exception($exception->getMessage());
+        }
     }
 
     public function getAmount($order)

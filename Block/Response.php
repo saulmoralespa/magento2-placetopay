@@ -4,11 +4,11 @@
 namespace Saulmoralespa\PlaceToPay\Block;
 
 
-class Cancel extends \Magento\Framework\View\Element\Template
+class Response extends \Magento\Framework\View\Element\Template
 {
     public function getMessage()
     {
-        return __('We regret that you have decided to cancel the payment');
+        return __('An error has occurred while checking the payment status');
     }
 
     public function getUrlHome()

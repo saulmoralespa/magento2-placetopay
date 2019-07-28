@@ -4,8 +4,8 @@
 namespace Saulmoralespa\PlaceToPay\Controller\Payment;
 
 
-use Dnetix\Redirection\PlacetoPay;
 use Exception;
+use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Sales\Model\Order\Payment\Transaction;
 use Magento\Payment\Helper\Data as PaymentHelper;
 
@@ -66,7 +66,7 @@ class Data extends \Magento\Framework\App\Action\Action
             $method = $order->getPayment()->getMethod();
             $methodInstance = $this->_paymentHelper->getMethodInstance($method);
 
-            $placetopay = $this->placeToPay();
+            $placetopay =  $methodInstance->placeToPay();
 
             $orderId = $order->getId();
             $reference = $orderId . "_" . time();
@@ -91,6 +91,7 @@ class Data extends \Magento\Framework\App\Action\Action
 
                 $statuses = $methodInstance->getOrderStates();
                 $status = $statuses["pending"];
+                $this->_helperData->log($status);
                 $state = \Magento\Sales\Model\Order::STATE_PENDING_PAYMENT;
                 $order->setState($state)->setStatus($status);
                 $payment->setSkipOrderProcessing(true);
@@ -107,24 +108,6 @@ class Data extends \Magento\Framework\App\Action\Action
 
         }catch (Exception $exception){
             $this->_helperData->log($exception->getMessage());
-            throw new Exception($exception->getMessage());
-        }
-    }
-
-    /**
-     * @return PlacetoPay
-     * @throws Exception
-     */
-    public function placeToPay()
-    {
-        try{
-            $placeToPay = new PlacetoPay([
-                'login' => $this->_helperData->getLogin(),
-                'tranKey' => $this->_helperData->getTrankey(),
-                'url' => $this->_helperData->getUrlEndPoint()
-            ]);
-            return $placeToPay;
-        }catch (Exception $exception){
             throw new Exception($exception->getMessage());
         }
     }
