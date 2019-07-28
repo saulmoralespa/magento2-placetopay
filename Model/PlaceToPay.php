@@ -116,4 +116,13 @@ class PlaceToPay extends AbstractMethod
         return $amount;
     }
 
+    public function getOrderStates()
+    {
+        return [
+            'pending' => $this->_scopeConfig->getValue('payment/placetopay/states/pending', \Magento\Store\Model\ScopeInterface::SCOPE_STORE),
+            'approved' => $this->_scopeConfig->getValue('payment/placetopay/states/approved', \Magento\Store\Model\ScopeInterface::SCOPE_STORE),
+            'rejected' => $this->_scopeConfig->getValue('payment/placetopay/states/rejected', \Magento\Store\Model\ScopeInterface::SCOPE_STORE)
+        ];
+    }
+
 }

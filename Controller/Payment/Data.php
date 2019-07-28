@@ -64,7 +64,7 @@ class Data extends \Magento\Framework\App\Action\Action
         try{
             $order = $this->_getCheckoutSession()->getLastRealOrder();
             $method = $order->getPayment()->getMethod();
-            //$methodInstance = $this->_paymentHelper->getMethodInstance($method);
+            $methodInstance = $this->_paymentHelper->getMethodInstance($method);
 
             $placetopay = $this->placeToPay();
 
@@ -75,6 +75,26 @@ class Data extends \Magento\Framework\App\Action\Action
 
             $response = $placetopay->request($request);
             if ($response->isSuccessful()) {
+
+                $payment = $order->getPayment();
+                $payment->setTransactionId($response->requestId)
+                    ->setIsTransactionClosed(0);
+
+                $payment->setParentTransactionId($order->getId());
+                $payment->setIsTransactionPending(true);
+                $transaction = $this->_transactionBuilder->setPayment($payment)
+                    ->setOrder($order)
+                    ->setTransactionId($payment->getTransactionId())
+                    ->build(Transaction::TYPE_ORDER);
+
+                $payment->addTransactionCommentsToOrder($transaction, __('pending'));
+
+                $statuses = $methodInstance->getOrderStates();
+                $status = $statuses["pending"];
+                $state = \Magento\Sales\Model\Order::STATE_PENDING_PAYMENT;
+                $order->setState($state)->setStatus($status);
+                $payment->setSkipOrderProcessing(true);
+                $order->save();
 
                 $result = $this->_resultJsonFactory->create();
                 return $result->setData([

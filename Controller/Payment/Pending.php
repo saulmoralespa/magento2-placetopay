@@ -3,9 +3,6 @@
 
 namespace Saulmoralespa\PlaceToPay\Controller\Payment;
 
-
-use Magento\Framework\App\ResponseInterface;
-
 class Pending extends \Magento\Framework\App\Action\Action
 {
     protected $_pageFactory;
