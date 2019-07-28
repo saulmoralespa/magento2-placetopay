@@ -6,4 +6,9 @@
 "URL for payment notifications: %1","URL for payment notifications: %1",
 "Notify URL","Notify URL",
 "We regret that you have decided to cancel the payment","We regret that you have decided to cancel the payment",
-"An error has occurred while checking the payment status","An error has occurred while checking the payment status"
+"An error has occurred while checking the payment status","An error has occurred while checking the payment status",
+"invalid notification","invalid notification",
+"Payment approved","Payment approved",
+"Payment declined","Payment declined",
+"Invoice created","Invoice created",
+"Invoice #%1","Invoice #%1"

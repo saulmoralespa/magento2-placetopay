@@ -6,4 +6,9 @@
 "URL for payment notifications: %1","URL para notificaciones de pagos %1",
 "Notify URL","URL de notificación",
 "We regret that you have decided to cancel the payment","Lamentamos que haya decidido cancelar el pago",
-"An error has occurred while checking the payment status","Ha surgido un error al comprobar el estado del pago"
+"An error has occurred while checking the payment status","Ha surgido un error al comprobar el estado del pago",
+"invalid notification","notificacion no válida",
+"Payment approved","Pago aprobado",
+"Payment declined","Pago rechazado",
+"Invoice created","Factura creada",
+"Invoice #%1","Factura #%1"

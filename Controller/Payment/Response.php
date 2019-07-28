@@ -149,7 +149,7 @@ class Response extends \Magento\Framework\App\Action\Action
 
                     $invoice = $objectManager->create('Magento\Sales\Model\Service\InvoiceService')->prepareInvoice($order);
                     $invoice = $invoice->setTransactionId($payment->getTransactionId())
-                        ->addComment("Invoice created.")
+                        ->addComment("Invoice created")
                         ->setRequestedCaptureCase(\Magento\Sales\Model\Order\Invoice::CAPTURE_ONLINE);
                     $invoice->register()
                         ->pay();
@@ -163,7 +163,7 @@ class Response extends \Magento\Framework\App\Action\Action
                     $transactionInvoice->save();
 
                     $order->addStatusHistoryComment(
-                        __('Invoice #%1.', $invoice->getId())
+                        __('Invoice #%1', $invoice->getId())
                     )
                         ->setIsCustomerNotified(true);
 
