@@ -65,8 +65,7 @@ define(
                     .done( data => {
                         window.location = data.url;
                     }).fail( response => {
-                     console.log(this.messageContainer);
-                    errorProcessor.process('error', this.messageContainer);
+                    errorProcessor.process(response, this.messageContainer);
                 }).always( () => {
                     fullScreenLoader.stopLoader();
                 });

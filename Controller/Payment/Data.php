@@ -91,7 +91,6 @@ class Data extends \Magento\Framework\App\Action\Action
 
                 $statuses = $methodInstance->getOrderStates();
                 $status = $statuses["pending"];
-                $this->_helperData->log($status);
                 $state = \Magento\Sales\Model\Order::STATE_PENDING_PAYMENT;
                 $order->setState($state)->setStatus($status);
                 $payment->setSkipOrderProcessing(true);
