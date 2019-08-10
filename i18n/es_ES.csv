@@ -16,4 +16,7 @@
 "Invoice #%1","Factura #%1",
 "State of the Order","Estado de la Orden",
 "Order status when the payment is approved","Estado del pedido cuando el pago es aprobado",
-"Order status when the payment is rejected","Estado del pedido cuando el pago es rechazado"
+"Order status when the payment is rejected","Estado del pedido cuando el pago es rechazado",
+"placetopay: requires the fields are not empty","placetopay: requiere que los campos no estén vacíos",
+"Requires alphanumeric","Requiere ser alfanumérico",
+"placetoPay: %1 requires alphanumeric","placetoPay: %1 requiere ser alfanumérico"

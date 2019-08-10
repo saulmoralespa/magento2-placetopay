@@ -18,4 +18,6 @@
 "State of the Order","Estado de la Orden",
 "Initial state of the order","Estado inicial del pedido",
 "Order status when the payment is approved","Estado del pedido cuando el pago es aprobado",
-"Order status when the payment is rejected","Estado del pedido cuando el pago es rechazado"
+"Order status when the payment is rejected","Estado del pedido cuando el pago es rechazado",
+"placetopay: requires the fields are not empty","placetopay: requiere que los campos no estén vacíos",
+"placetoPay: %1 requires alphanumeric","placetoPay: %1 requiere ser alfanumérico"

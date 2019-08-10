@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright  2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="environment_g" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Enviroments</label>
+        <group id="development" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Development</label>
+            <field id="trankey" translate="label" type="password" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>trankey</label>
+                <comment>Transactional key</comment>
+                <backend_model>Saulmoralespa\PlaceToPay\Model\Config\Backend\Alphanumeric</backend_model>
+            </field>
+            <field id="login" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>login</label>
+                <comment>Identificador del sitio</comment>
+                <backend_model>Saulmoralespa\PlaceToPay\Model\Config\Backend\Alphanumeric</backend_model>
+            </field>
+            <field id="url" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>URL</label>
+                <comment>URL refers to the endpoint to use</comment>
+                <validate>validate-url</validate>
+            </field>
+        </group>
+        <group id="production" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Production</label>
+            <field id="trankey" translate="label" type="password" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>trankey</label>
+                <comment>Transactional key</comment>
+                <backend_model>Saulmoralespa\PlaceToPay\Model\Config\Backend\Alphanumeric</backend_model>
+            </field>
+            <field id="login" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>login</label>
+                <comment>Identificador del sitio</comment>
+                <backend_model>Saulmoralespa\PlaceToPay\Model\Config\Backend\Alphanumeric</backend_model>
+            </field>
+            <field id="url" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>URL</label>
+                <comment>URL refers to the endpoint to use</comment>
+                <validate>validate-url</validate>
+            </field>
+        </group>
+    </group>
+</include>

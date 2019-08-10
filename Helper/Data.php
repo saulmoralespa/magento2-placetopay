@@ -89,13 +89,4 @@ class Data extends \Magento\Payment\Helper\Data
     {
         return $this->scopeConfig->getValue('payment/placetopay/max_order_total', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
-
-    public function getOrderStates()
-    {
-        return [
-            'pending' => $this->scopeConfig->getValue('payment/placetopay/states/pending', \Magento\Store\Model\ScopeInterface::SCOPE_STORE),
-            'approved' => $this->scopeConfig->getValue('payment/placetopay/states/approved', \Magento\Store\Model\ScopeInterface::SCOPE_STORE),
-            'rejected' => $this->scopeConfig->getValue('payment/placetopay/states/rejected', \Magento\Store\Model\ScopeInterface::SCOPE_STORE)
-        ];
-    }
 }

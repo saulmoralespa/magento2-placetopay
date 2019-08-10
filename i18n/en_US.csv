@@ -1,5 +1,3 @@
-"Transactional key","Transactional key",
-"Site Identifier","Site Identifier",
 "URL refers to the endpoint to use","URL refers to the endpoint to use",
 "Enviroments","Enviroments"
 "Environment","Environment",
@@ -9,6 +7,7 @@
 "Notify URL","Notify URL",
 "We regret that you have decided to cancel the payment","We regret that you have decided to cancel the payment",
 "An error has occurred while checking the payment status","An error has occurred while checking the payment status",
+"An error has occurred during payment processing","An error has occurred during payment processing",
 "invalid notification","invalid notification",
 "Payment approved","Payment approved",
 "Payment declined","Payment declined",
@@ -18,4 +17,6 @@
 "State of the Order","State of the Order",
 "Initial state of the order","Initial state of the order",
 "Order status when the payment is approved","Order status when the payment is approved",
-"Order status when the payment is rejected","Order status when the payment is rejected"
+"Order status when the payment is rejected","Order status when the payment is rejected",
+"placetopay: requires the fields are not empty","placetopay: requires the fields are not empty",
+"placetoPay: %1 requires alphanumeric","placetoPay: %1 requires alphanumeric"
